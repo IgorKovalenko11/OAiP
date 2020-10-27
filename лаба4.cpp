@@ -9,15 +9,15 @@ int main() {
 	int *mas, n, vozr = 0, temp = 0;
 	printf("Введите количество элементов: ");
 	scanf_s("%d", &n);
-	mas = (int*)malloc(n * sizeof(int));                                                           //выделение памяти под массив                                                
+	mas = (int*)malloc(n * sizeof(int));                                                                                                           
 	for (int i = 0; i < n; i++) {
-		printf("mas[%d]= ", i);                                                                   //заполнение массива в ручную
+		printf("mas[%d]= ", i);                                                                   
 		scanf_s("%d", &mas[i]);                                                               
 	}
 	for (int i = 0; i < n; i++)
 	{
 		temp = i;
-		for (; (mas[i] < mas[i + 1]);)                                                             //проверка членов массива циклом while
+		for (; (mas[i] < mas[i + 1]);)                                                             
 		{
 			i++;
 		}
