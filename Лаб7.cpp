@@ -1,4 +1,4 @@
-﻿#include <stdio.h>
+#include <stdio.h>
 #include <malloc.h>
 #include <stdlib.h>
 #include <time.h>
@@ -7,8 +7,8 @@
 #define False 0
 #define True 1
 
-void inoutstring(char[], int);				// прототип функции ввода-вывода
-int  identremove(char[], char[], int n);		// прототип функции удаления совпадающих элементов
+void inoutstring(char[], int);				
+int  identremove(char[], char[], int n);		
 int main()
 {
 	srand(time(NULL));
@@ -21,7 +21,7 @@ int main()
 	printf_s("Input size of the string: \n");
 	scanf_s("%d", &n);
 
-	if (!(string1 = (char*)calloc(n, sizeof(char))) || !(string2 = (char*)calloc(n, sizeof(char))))			// выделяем память с проверкой
+	if (!(string1 = (char*)calloc(n, sizeof(char))) || !(string2 = (char*)calloc(n, sizeof(char))))			
 	{
 		printf_s("Not enough memory. Restar the program!\n");
 		return 0;
@@ -46,10 +46,10 @@ int main()
 
 void inoutstring(char string[], int n)
 {
-	for (int i = 0; i < n; i++)									// вводим 
+	for (int i = 0; i < n; i++)									
 		string[i] = ('a' + rand() % ('z' - 'a'));
 
-	for (int i = 0; i < n; i++)									// выводим :)
+	for (int i = 0; i < n; i++)									
 		printf_s("%c", string[i]);
 
 	putchar('\n');
@@ -60,9 +60,6 @@ int identremove(char s1[], char s2[], int n)
 {
 	int i, j, k, flag = False;
 
-	// Пока не конец строки и размер строки не максимален
-	//если символ строки не равен символу второй строки т.е. элементу для удаления
-	//записываем символ по j, после этого увеличиваем на единицу
 
 	for (k = 0; s2[k] != '\0' && k < n; k++) {
 		for (i = j = 0; s1[i] != '\0' && i < n && j < n; i++)
